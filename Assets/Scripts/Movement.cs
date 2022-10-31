@@ -5,16 +5,14 @@ public class Movement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField]private LayerMask groundLayer;
     private Rigidbody2D rB;
-    private float horInput;
+    private float dirX;
     private bool IsGrounded;
     private Animator anim;
-    private BoxCollider2D boxCollider2D;
 
     private void Awake()
     {
         rB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -25,15 +23,15 @@ public class Movement : MonoBehaviour
 
     public void Controls()
     {
-        horInput = Input.GetAxis("Horizontal");
+        dirX = Input.GetAxis("Horizontal") * speed;
 
-        rB.velocity = new Vector2(horInput * speed, rB.velocity.y);
+        rB.velocity = new Vector2(dirX, rB.velocity.y);
 
-        if (horInput > 0.01f)
+        if (dirX > 0.01f)
         {
             transform.localScale = Vector3.one;
         }
-        else if (horInput < -0.01f)
+        else if (dirX < -0.01f)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -46,7 +44,7 @@ public class Movement : MonoBehaviour
 
     public void AnimParams()
     {
-        anim.SetBool("Run", horInput != 0);
+        anim.SetBool("Run", dirX != 0);
         anim.SetBool("Grounded", IsGrounded);
     }
 
@@ -67,6 +65,6 @@ public class Movement : MonoBehaviour
 
     public bool Attack()
     {
-        return horInput == 0 && IsGrounded;
+        return dirX == 0 && IsGrounded;
     }
 }
