@@ -18,13 +18,11 @@ public class Fireball : MonoBehaviour
 
     private void Update()
     {
-        if (hit)
-        {
-            return;
-        }
-
+        if (hit)return;       
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
