@@ -447,7 +447,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &121761433
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2064,7 +2064,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &635510345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2391,7 +2391,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &780895690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3369,7 +3369,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1122520681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3727,7 +3727,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1240460833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3891,7 +3891,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1317582930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5032,7 +5032,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1492312606
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5278,7 +5278,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1530787737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5653,7 +5653,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1607371610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6144,7 +6144,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1716964870
 BoxCollider2D:
   m_ObjectHideFlags: 0
