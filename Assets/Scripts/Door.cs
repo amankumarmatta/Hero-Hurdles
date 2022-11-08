@@ -12,9 +12,9 @@ public class Door : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if(collision.transform.position.x < transform.position.x)
+            if (collision.transform.position.x < transform.position.x)
             {
-            cam.MoveToNewRoom(nextRoom);
+                cam.MoveToNewRoom(nextRoom);
             }
         }
         else
