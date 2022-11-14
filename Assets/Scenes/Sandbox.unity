@@ -5421,7 +5421,6 @@ MonoBehaviour:
   startingHealth: 3
   iFramesDuration: 2
   numberofflashes: 3
-  spriteRenderer: {fileID: 0}
 --- !u!1001 &1246524691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6639,12 +6638,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1458061032}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1464688456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1938313412691407673, guid: d42ab763299549446a964b517c11965f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1938313411395185777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1464688457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1938313412691407672, guid: d42ab763299549446a964b517c11965f,
     type: 3}
   m_PrefabInstance: {fileID: 1938313411395185777}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1464688458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464688456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552bfe90f9e1c6145ab00bb2f4914fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  damage: 1
+  movementDistance: 5
 --- !u!1 &1469431393
 GameObject:
   m_ObjectHideFlags: 0
@@ -9985,7 +10005,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saw
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1938313412691407676, guid: d42ab763299549446a964b517c11965f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d42ab763299549446a964b517c11965f, type: 3}
 --- !u!1001 &4772178479591289263
 PrefabInstance:

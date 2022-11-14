@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SawTrap : MonoBehaviour
+public class Enemy_Sideways : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float damage;
@@ -45,7 +45,7 @@ public class SawTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             collision.GetComponent<Health>().TakeDamage(damage);
         }

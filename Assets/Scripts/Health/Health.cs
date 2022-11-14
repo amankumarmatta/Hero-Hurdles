@@ -13,7 +13,9 @@ public class Health : MonoBehaviour
     [Header("IFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private float numberofflashes;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+
+
+    private SpriteRenderer spriteRenderer;
     
 
     private void Awake()
@@ -45,6 +47,11 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+
     private IEnumerator Invulnerability()
     {
         Physics2D.IgnoreLayerCollision(9, 10, true);
@@ -56,10 +63,5 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberofflashes * 2));
         }
         Physics2D.IgnoreLayerCollision(9, 10, false);
-    }
-
-    public void AddHealth(float _value)
-    {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
 }
