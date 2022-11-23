@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
 
     public void Controls()
     {
-        dirX = Input.GetAxis("Horizontal") * speed;
+        dirX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
         rB.velocity = new Vector2(dirX, rB.velocity.y);
 
