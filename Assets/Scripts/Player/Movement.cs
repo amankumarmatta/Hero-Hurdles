@@ -32,12 +32,19 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         rB.velocity = new Vector2(direction * speed, rB.velocity.y);
-        anim.SetFloat("Speed", Mathf.Abs(direction));
 
         if (isFacingRight && direction < 0 || !isFacingRight && direction > 0)
         {
             Flip();
         }
+
+        AnimParams();
+    }
+
+    private void AnimParams()
+    {
+        anim.SetFloat("Speed", Mathf.Abs(direction));
+        anim.SetBool("Grounded", isGrounded);
     }
 
     public void Flip()
@@ -53,6 +60,7 @@ public class Movement : MonoBehaviour
             rB.velocity = new Vector2(rB.velocity.x, JumpForce);
         }
         isGrounded = false;
+        anim.SetTrigger("Jump");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

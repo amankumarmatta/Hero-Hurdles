@@ -1,10 +1,11 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
     [SerializeField]private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] fireballs;
+    private PlayerControls controls;
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
     private Movement movement;
@@ -13,15 +14,15 @@ public class Attack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         movement = GetComponent<Movement>();
+
+        controls = new PlayerControls();
+        controls.Enable();
+
+        controls.Move.Shoot.performed += ctx => AttackMode();
     }
 
     private void Update()
     {
-        if(Input.GetMouseButton(0) && cooldownTimer > attackCooldown && movement.Attack())
-        {
-            AttackMode();
-
-        }
         cooldownTimer += Time.deltaTime;
     }
 
@@ -47,4 +48,3 @@ public class Attack : MonoBehaviour
         return 0;
     }
 }
-*/

@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator anim;
-   // private bool dead;
+    private bool dead;
     [Header("IFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private float numberofflashes;
@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            //dead = true;
+            dead = true;
             anim.SetTrigger("Dead");
             GetComponent<Movement>().enabled = false;
         }
