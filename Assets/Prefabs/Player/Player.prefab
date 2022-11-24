@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1815472570669568819}
   - component: {fileID: 1815472570669568817}
   - component: {fileID: 1815472570669568818}
-  - component: {fileID: 1815472570669568816}
   - component: {fileID: 1815472570669568823}
   m_Layer: 9
   m_Name: Player
@@ -167,34 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
---- !u!114 &1815472570669568816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815472570669568831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df05da548a526084885bef78266a4494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 0.25
-  firePoint: {fileID: 1815472571158570739}
-  fireballs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  JumpForce: 10
+  rB: {fileID: 1815472570669568819}
 --- !u!114 &1815472570669568823
 MonoBehaviour:
   m_ObjectHideFlags: 0

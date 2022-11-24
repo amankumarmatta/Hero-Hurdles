@@ -2,69 +2,64 @@
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField]private LayerMask groundLayer;
-    private Rigidbody2D rB;
-    private float dirX;
-    private bool IsGrounded;
-    private Animator anim;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Animator anim;
+
+    PlayerControls controls;
+    private float direction = 0f;
+    public float speed;
+    public float JumpForce;
+
+    private bool isGrounded = false;
+    private bool isFacingRight = true;
+
+    public Rigidbody2D rB;
+
 
     private void Awake()
     {
-        rB = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        controls = new PlayerControls();
+        controls.Enable();
+
+        controls.Move.Move.performed += ctx =>
+        {
+            direction = ctx.ReadValue<float>();
+        };
+
+        controls.Move.Jump.performed += ctx => Jump();
     }
 
     private void Update()
     {
-        Controls();
-        AnimParams();
-    }
+        rB.velocity = new Vector2(direction * speed, rB.velocity.y);
+        anim.SetFloat("Speed", Mathf.Abs(direction));
 
-    public void Controls()
-    {
-        dirX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-
-        rB.velocity = new Vector2(dirX, rB.velocity.y);
-
-        if (dirX > 0.01f)
+        if (isFacingRight && direction < 0 || !isFacingRight && direction > 0)
         {
-            transform.localScale = Vector3.one;
-        }
-        else if (dirX < -0.01f)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-
-        if (Input.GetKey(KeyCode.Space) && IsGrounded)
-        {
-            Jump();
+            Flip();
         }
     }
 
-    public void AnimParams()
+    public void Flip()
     {
-        anim.SetBool("Run", dirX != 0);
-        anim.SetBool("Grounded", IsGrounded);
+        isFacingRight = !isFacingRight;
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
 
     public void Jump()
     {
-        rB.velocity = new Vector2(rB.velocity.x, speed);
-        IsGrounded = false;
-        anim.SetTrigger("Jump");
+        if (isGrounded == true)
+        {
+            rB.velocity = new Vector2(rB.velocity.x, JumpForce);
+        }
+        isGrounded = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
-            IsGrounded = true;
+            isGrounded = true;
         }
-    }
-
-    public bool Attack()
-    {
-        return dirX == 0 && IsGrounded;
     }
 }

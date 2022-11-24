@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
@@ -47,3 +47,4 @@ public class Attack : MonoBehaviour
         return 0;
     }
 }
+*/
