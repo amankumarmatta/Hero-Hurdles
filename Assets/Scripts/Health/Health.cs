@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -8,13 +10,14 @@ public class Health : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator anim;
-    private bool dead;
+
     [Header("IFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private float numberofflashes;
 
 
     private SpriteRenderer spriteRenderer;
+    public Button left, right, shoot, jump;
     
 
     private void Awake()
@@ -39,15 +42,29 @@ public class Health : MonoBehaviour
         }
         else
         {
-            dead = true;
-            anim.SetTrigger("Dead");
             GetComponent<Movement>().enabled = false;
+            anim.SetTrigger("Dead");
+            StartCoroutine("PlayerDied");
         }
     }
 
     public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+
+    private IEnumerator PlayerDied()
+    {
+        if (currentHealth == 0)
+        {
+            left.interactable = false;
+            right.interactable = false;
+            shoot.interactable = false;
+            jump.interactable = false;
+            Debug.LogError("Buttons Disabled");
+            yield return new WaitForSeconds(3);
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     private IEnumerator Invulnerability()
