@@ -42,6 +42,11 @@ public class Health : MonoBehaviour
         }
         else
         {
+            left.GetComponent<Image>().raycastTarget = false;
+            right.GetComponent<Image>().raycastTarget = false;
+            shoot.GetComponent<Image>().raycastTarget = false;
+            jump.GetComponent<Image>().raycastTarget = false;
+            Debug.LogError("Buttons Disabled");
             GetComponent<Movement>().enabled = false;
             anim.SetTrigger("Dead");
             StartCoroutine("PlayerDied");
@@ -55,16 +60,8 @@ public class Health : MonoBehaviour
 
     private IEnumerator PlayerDied()
     {
-        if (currentHealth == 0)
-        {
-            left.interactable = false;
-            right.interactable = false;
-            shoot.interactable = false;
-            jump.interactable = false;
-            Debug.LogError("Buttons Disabled");
             yield return new WaitForSeconds(3);
             SceneManager.LoadScene("GameOver");
-        }
     }
 
     private IEnumerator Invulnerability()

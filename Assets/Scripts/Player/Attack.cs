@@ -8,17 +8,16 @@ public class Attack : MonoBehaviour
     private PlayerControls controls;
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
-    private Movement movement;
+    private bool isGrounded;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        movement = GetComponent<Movement>();
 
         controls = new PlayerControls();
         controls.Enable();
 
-        controls.Move.Shoot.performed += ctx => AttackMode();
+        controls.Move.Shoot.performed += ctx => AttackMode();     
     }
 
     private void Update()
@@ -28,12 +27,14 @@ public class Attack : MonoBehaviour
 
     private void AttackMode()
     {
-        anim.SetTrigger("Attack");
-        cooldownTimer = 0;
-
-        //Object Pooling
-        fireballs[FindFireBall()].transform.position = firePoint.position;
-        fireballs[FindFireBall()].GetComponent<Fireball>().SetDirection(Mathf.Sign(transform.localScale.x));
+        if (isGrounded == true)
+        {
+            anim.SetTrigger("Attack");
+            cooldownTimer = 0;
+            
+            fireballs[FindFireBall()].transform.position = firePoint.position;
+            fireballs[FindFireBall()].GetComponent<Fireball>().SetDirection(Mathf.Sign(transform.localScale.x));
+        }
     }
 
     private int FindFireBall()
@@ -47,4 +48,12 @@ public class Attack : MonoBehaviour
         }
         return 0;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+
 }

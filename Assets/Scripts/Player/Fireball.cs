@@ -5,7 +5,7 @@ public class Fireball : MonoBehaviour
     [SerializeField] private float speed;
     private float direction;
     private bool hit;
-    //private float lifetime;
+    private float lifetime;
 
     private Animator anim;
     private BoxCollider2D boxCollider;
@@ -21,8 +21,8 @@ public class Fireball : MonoBehaviour
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
 
-        /*lifetime += Time.deltaTime;
-        if (lifetime > 5) gameObject.SetActive(false);*/
+        lifetime += Time.deltaTime;
+        if (lifetime > 5) gameObject.SetActive(false);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
