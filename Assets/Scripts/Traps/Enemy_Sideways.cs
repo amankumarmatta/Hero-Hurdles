@@ -5,11 +5,12 @@ using UnityEngine;
 public class Enemy_Sideways : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float damage;
     [SerializeField] private float movementDistance;
     private float leftEdge;
     private float rightEdge;
     private bool movingLeft;
+
+    public GameObject player;
 
     private void Awake()
     {
@@ -47,7 +48,8 @@ public class Enemy_Sideways : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<Health>().TakeDamage(damage);
+        player.GetComponent<Health>().TakeDamage(1);
+
         }
     }
 }

@@ -51,6 +51,7 @@ public class Health : MonoBehaviour
             anim.SetTrigger("Dead");
             StartCoroutine("PlayerDied");
         }
+        Debug.Log("TakeDamage");
     }
 
     public void AddHealth(float _value)

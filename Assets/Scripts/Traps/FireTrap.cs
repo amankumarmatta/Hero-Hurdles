@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FireTrap : MonoBehaviour
 {
-    [SerializeField] private float damage;
-
     [Header("Firetrap Timers")]
     [SerializeField] private float activationDelay;
     [SerializeField] private float activeTime;
@@ -15,7 +13,7 @@ public class FireTrap : MonoBehaviour
     private bool triggered; //when the trap gets triggered
     private bool active; //when the trap is active and can hurt the player
 
-    private void Awake()
+    private void Start()
     {
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
@@ -32,7 +30,7 @@ public class FireTrap : MonoBehaviour
 
             if (active)
             {
-                collision.GetComponent<Health>().TakeDamage(damage);
+                collision.GetComponent<Health>().TakeDamage(1);
             }
         }
     }
