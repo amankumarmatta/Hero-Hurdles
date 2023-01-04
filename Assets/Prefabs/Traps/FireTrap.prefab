@@ -141,7 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fda1ab6ee438844b32f9edd7a3af59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   activationDelay: 2
-  activeTime: 1
-  player: {fileID: 0}
+  activeTime: 2
