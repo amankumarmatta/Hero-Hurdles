@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
   - Wall
+  - Ground
   - Enemy
   layers:
   - Default
@@ -16,9 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Player
-  - Enemy
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -41,21 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 1902334367
+  - name: BG
+    uniqueID: 2109413383
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 3845195589
-    locked: 0
   - name: Player
-    uniqueID: 3356666371
+    uniqueID: 3874723245
+    locked: 0
+  - name: FG
+    uniqueID: 2242353581
     locked: 0
   - name: Ground
-    uniqueID: 1429161931
-    locked: 0
-  - name: Traps
-    uniqueID: 649650997
+    uniqueID: 859138149
     locked: 0
