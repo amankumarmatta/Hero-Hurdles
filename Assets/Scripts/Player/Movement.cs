@@ -69,5 +69,9 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.tag == "Blocks")
+        {
+            isGrounded = true;
+        }
     }
 }
