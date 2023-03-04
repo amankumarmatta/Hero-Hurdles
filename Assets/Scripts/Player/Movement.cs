@@ -12,7 +12,6 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded = false;
     private bool isFacingRight = true;
-    private bool Blocks = false;
 
     public Rigidbody2D rB;
 
@@ -69,10 +68,6 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
-        }
-        if (collision.gameObject.tag == "Blocks")
-        {
-            Blocks = true;
         }
     }
 }
