@@ -12,9 +12,4 @@ public class CameraController : MonoBehaviour
     {
         transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
     }
-
-    public void MoveToNewRoom(Transform newRoom)
-    {
-        currentPosx = newRoom.position.x + 9.917425f;
-    }
 }
