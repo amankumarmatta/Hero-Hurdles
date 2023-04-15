@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class BG : MonoBehaviour
 {
-    public float scrollSpeed = 1.0f;
-    public float tileSize = 1.0f;
-    private Vector2 spriteSize;
+    private float length, startpos;
+    public GameObject cam;
+    public float parallax;
 
-    void Start()
+    private void Start()
     {
-        spriteSize = GetComponent<SpriteRenderer>().sprite.bounds.size;
-        transform.position = new Vector2(transform.position.x + spriteSize.x * transform.localScale.x, transform.position.y);
+        startpos = transform.position.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        transform.position = new Vector2(transform.position.x - scrollSpeed * Time.deltaTime, transform.position.y);
+        float dist = cam.transform.position.x * parallax;
+        float temp = cam.transform.position.x * 1 - parallax;
 
-        if (transform.position.x < -spriteSize.x * transform.localScale.x)
+        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
+
+        if (temp > startpos + length)
         {
-            transform.position = new Vector2(transform.position.x + 2 * spriteSize.x * transform.localScale.x, transform.position.y);
+            startpos += length;
+        }
+
+        else if (temp < startpos - length)
+        {
+            startpos -= length;
         }
     }
+
 }
