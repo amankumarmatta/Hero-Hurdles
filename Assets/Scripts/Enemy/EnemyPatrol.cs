@@ -4,43 +4,54 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float movementDistance;
-    private float leftEdge;
-    private float rightEdge;
-    private bool movingLeft;
+    public Transform pointA;
+    public Transform pointB;
+    public float speed = 5f;
 
-    public GameObject player;
+    private bool facingRight = true;
 
-    private void Awake()
+    private Animator anim;
+
+    private Transform targetPoint;
+
+    void Start()
     {
-        leftEdge = transform.position.x - movementDistance;
-        rightEdge = transform.position.x + movementDistance;
+        // Start by moving towards point A
+        targetPoint = pointA;
+        anim = GetComponent<Animator>();
+        anim.SetBool("Moving", true);
     }
 
-    private void Update()
+    void Update()
     {
-        if (movingLeft)
+        // Calculate the distance to the target point
+        float distance = Vector3.Distance(transform.position, targetPoint.position);
+
+        // If we're close enough to the target point, switch to the other point
+        if (distance < 0.1f)
         {
-            if (transform.position.x > leftEdge)
+            if (targetPoint == pointA)
             {
-                transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
+                targetPoint = pointB;
             }
             else
             {
-                movingLeft = false;
+                targetPoint = pointA;
             }
+
+            Flip();
         }
-        else
-        {
-            if (transform.position.x < rightEdge)
-            {
-                transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
-            }
-            else
-            {
-                movingLeft = true;
-            }
-        }
+
+        // Move towards the target point
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, speed * Time.deltaTime);
+    }
+
+    void Flip()
+    {
+        // Flip the GameObject by reversing its scale on the X axis
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }
