@@ -9,18 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: b3e9402735acf664da1f18d6924d0446
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Forest.unity
     guid: 596b0a5a184e62f47a10836e4bd76ec5
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
-    guid: f87a11e105d38024aac19f10d00d642d
+    path: Assets/Scenes/Snow.unity
+    guid: d1ff6be5b071eb741b7cd49c14d4fde0
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
-    guid: 09ff63ba8604791429f9bc48f1d67ab9
-  - enabled: 1
-    path: Assets/Scenes/Win.unity
-    guid: c3e3e52a85ab6d44c853835d05e88e43
+    path: Assets/Scenes/Desert.unity
+    guid: a874915473bcd2e4f8e9882e363ab7b8
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: abf0396512eed5141a867a2834f9d172
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: c3e3e52a85ab6d44c853835d05e88e43
   m_configObjects: {}
