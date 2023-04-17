@@ -22,7 +22,7 @@ public class StartMenu : MonoBehaviour
 
     private void StartButton()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Forest");
     }
 
     private void OptionsButton()
