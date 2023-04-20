@@ -1,21 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class CoinCollection : MonoBehaviour
 {
-    private float coin = 0;
-
-    public TextMeshProUGUI coinsText;
+    public int coinsCollected = 0;
+    public TextMeshProUGUI coinText;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Coin"))
         {
-            coin++;
-            coinsText.text = coin.ToString();
-            Destroy(this.gameObject);
+            coinsCollected++;
+            Destroy(collision.gameObject);
+            UpdateCoinText();
         }
+    }
+
+    void UpdateCoinText()
+    {
+        coinText.text = "Coins: " + coinsCollected;
     }
 }

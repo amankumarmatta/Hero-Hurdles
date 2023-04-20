@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
 
     public Rigidbody2D rB;
 
-
     private void Awake()
     {
         controls = new PlayerControls();
