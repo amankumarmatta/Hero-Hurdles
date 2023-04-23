@@ -406,7 +406,7 @@ Canvas:
   m_GameObject: {fileID: 260527141}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 907690272}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -761,7 +761,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 113.8}
-  m_SizeDelta: {x: 0, y: 154.0679}
+  m_SizeDelta: {x: -306.89, y: 168.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834832215
 MonoBehaviour:
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DRAGON ADVENTURE
+  m_text: KNIGHT ADVENTURE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 915069c03a596e34a9a5b35d041d2430, type: 2}
   m_sharedMaterial: {fileID: 2708744616190046529, guid: 915069c03a596e34a9a5b35d041d2430, type: 2}
