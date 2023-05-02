@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Blocks
   - Coin
+  - Die
   layers:
   - Default
   - TransparentFX
