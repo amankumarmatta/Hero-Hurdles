@@ -13,15 +13,11 @@ public class GameOverUI : MonoBehaviour
 
     private void Start()
     {
-        restart.onClick.AddListener(Restart);
+        restart.onClick.AddListener(RestartGame);
         quit.onClick.AddListener(Quit);
         mainMenu.onClick.AddListener(MainMenu);
     }
 
-    public void Restart()
-    {
-        SceneManager.LoadScene("Level 1");
-    }
 
     public void Quit()
     {
@@ -31,5 +27,10 @@ public class GameOverUI : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Start Menu");
+    }
+    public void RestartGame()
+    {
+        int lastPlayedLevelIndex = PlayerPrefs.GetInt("LastPlayedLevelIndex");
+        SceneManager.LoadScene(lastPlayedLevelIndex);
     }
 }

@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
         controls.Move.Jump.performed += ctx => Jump();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         rB.velocity = new Vector2(direction * speed, rB.velocity.y);
 

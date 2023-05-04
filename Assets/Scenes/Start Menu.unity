@@ -783,7 +783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: KNIGHT ADVENTURE
+  m_text: KNIGHT CHRONICLES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 915069c03a596e34a9a5b35d041d2430, type: 2}
   m_sharedMaterial: {fileID: 2708744616190046529, guid: 915069c03a596e34a9a5b35d041d2430, type: 2}
