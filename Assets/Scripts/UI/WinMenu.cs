@@ -9,13 +9,6 @@ public class WinMenu : MonoBehaviour
 
     private int nextLevelIndex;
 
-
-    public void LoadNextLevel()
-    {
-        PlayerPrefs.SetInt("LastPlayedLevelIndex", nextLevelIndex);
-        SceneManager.LoadScene(nextLevelIndex);
-    }
-
     private void Start()
     {
         replay.onClick.AddListener(Replay);
@@ -31,7 +24,11 @@ public class WinMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-   
+    public void LoadNextLevel()
+    {
+        PlayerPrefs.SetInt("LastPlayedLevelIndex", nextLevelIndex);
+        SceneManager.LoadScene(nextLevelIndex);
+    }
 
     private void Quit()
     {
