@@ -17,7 +17,8 @@ public class Health : MonoBehaviour
 
 
     private SpriteRenderer spriteRenderer;
-    public Button left, right, shoot, jump;
+    public Button left, right, jump;
+    public GameObject GameOverPanel;
     
 
     private void Awake()
@@ -61,7 +62,7 @@ public class Health : MonoBehaviour
     private IEnumerator PlayerDied()
     {
             yield return new WaitForSeconds(3);
-            SceneManager.LoadScene("GameOver");
+            GameOverPanel.SetActive(true);
     }
 
     private IEnumerator Invulnerability()

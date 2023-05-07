@@ -24701,7 +24701,6 @@ GameObject:
   - component: {fileID: 1228133359}
   - component: {fileID: 1228133358}
   - component: {fileID: 1228133353}
-  - component: {fileID: 1228133355}
   - component: {fileID: 1228133356}
   - component: {fileID: 1228133357}
   m_Layer: 3
@@ -24838,19 +24837,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1228133355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228133348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df05da548a526084885bef78266a4494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 5
 --- !u!114 &1228133356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24868,8 +24854,8 @@ MonoBehaviour:
   numberofflashes: 3
   left: {fileID: 7738015760656446533}
   right: {fileID: 1756400488065954068}
-  shoot: {fileID: 0}
   jump: {fileID: 1545738895855995971}
+  GameOverPanel: {fileID: 8084617204160970352}
 --- !u!70 &1228133357
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
