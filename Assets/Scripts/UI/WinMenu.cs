@@ -7,7 +7,6 @@ public class WinMenu : MonoBehaviour
     [SerializeField] private Button replay, nextLevel, quit, yes, no;
     [SerializeField] private GameObject quitPanel, winPanel;
 
-    private int nextLevelIndex;
 
     private void Start()
     {
@@ -15,8 +14,7 @@ public class WinMenu : MonoBehaviour
         nextLevel.onClick.AddListener(LoadNextLevel);
         quit.onClick.AddListener(Quit);
         yes.onClick.AddListener(Yes);
-        no.onClick.AddListener(No);
-        nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        no.onClick.AddListener(No); 
     }
 
     private void Replay()
@@ -26,8 +24,7 @@ public class WinMenu : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        PlayerPrefs.SetInt("LastPlayedLevelIndex", nextLevelIndex);
-        SceneManager.LoadScene(nextLevelIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void Quit()

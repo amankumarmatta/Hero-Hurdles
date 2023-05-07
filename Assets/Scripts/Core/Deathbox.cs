@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Deathbox : MonoBehaviour
 {
+    public GameObject GameOverPanel;
+
+    private void Start()
+    {
+        GameOverPanel.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Die")
         {
-            SceneManager.LoadScene("GameOver");
+            GameOverPanel.SetActive(true);
         }
     }
 }

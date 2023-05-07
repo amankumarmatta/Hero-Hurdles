@@ -43,8 +43,7 @@ public class Health : MonoBehaviour
         else
         {
             left.GetComponent<Image>().raycastTarget = false;
-            right.GetComponent<Image>().raycastTarget = false;
-            shoot.GetComponent<Image>().raycastTarget = false;
+            right.GetComponent<Image>().raycastTarget = false;            
             jump.GetComponent<Image>().raycastTarget = false;
             Debug.LogError("Buttons Disabled");
             GetComponent<Movement>().enabled = false;

@@ -30,7 +30,6 @@ public class GameOverUI : MonoBehaviour
     }
     public void RestartGame()
     {
-        int lastPlayedLevelIndex = PlayerPrefs.GetInt("LastPlayedLevelIndex");
-        SceneManager.LoadScene(lastPlayedLevelIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
