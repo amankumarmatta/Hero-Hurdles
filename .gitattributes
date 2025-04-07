@@ -1,2 +1,10 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Mark all C# files as source
+*.cs linguist-language=C#
+
+# Mark auto-generated files as generated (so they don't affect the language stats)
+*.Designer.cs linguist-generated
+*.g.cs linguist-generated
+*.g.i.cs linguist-generated
+
+# You can also do this for Unity
+*.meta linguist-generated
